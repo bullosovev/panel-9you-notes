@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 基础服务说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f8f6f1;
+            color: #2e2b26;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+        .wrapper {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 2.8rem 0 3.5rem;
+        }
+
+        /* hero */
+        .hero {
+            background: #eae7de;
+            border-radius: 32px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+            color: #1f1d19;
+        }
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #4e4942;
+            max-width: 580px;
+            margin-top: 0.3rem;
+            border-left: 4px solid #b7a78a;
+            padding-left: 1.2rem;
+        }
+
+        /* 通用区块 */
+        section {
+            margin-bottom: 2.8rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.01em;
+            color: #2b2722;
+            border-bottom: 2px solid #dbd4c7;
+            padding-bottom: 0.3rem;
+        }
+
+        /* 卡片网格 */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .cards .card {
+            background: #ffffffed;
+            border-radius: 20px;
+            padding: 1.5rem 1.4rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e7e2d9;
+        }
+        .cards .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: #1f1c17;
+        }
+        .cards .card p {
+            color: #4f4a43;
+            font-size: 0.97rem;
+        }
+        @media (max-width: 600px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* 说明区 / 引用块 */
+        .insight-box {
+            background: #eae5db;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 2.2rem;
+            border-left: 6px solid #9d8b74;
+        }
+        .insight-box p {
+            margin-bottom: 0.6rem;
+        }
+        .insight-box strong {
+            color: #1f1b15;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            border-bottom: 1px solid #ddd7cc;
+            padding: 1rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: 0;
+        }
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #1f1d19;
+        }
+        .faq-a {
+            color: #4f4a43;
+            font-size: 0.98rem;
+        }
+        .faq-a a {
+            color: #4a4037;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+        .faq-a a:hover {
+            color: #0f0e0b;
+        }
+
+        /* 底部链接区域 */
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d6cfc2;
+            font-size: 0.95rem;
+            color: #5d564d;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            align-items: center;
+        }
+        .footer-links a {
+            color: #3f372e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+        .footer-links a:hover {
+            color: #0a0907;
+        }
+        .footer-links .sep {
+            color: #b3aa9c;
+            user-select: none;
+        }
+
+        /* 通用 */
+        a {
+            color: #3f372e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        a:hover {
+            color: #0a0907;
+        }
+        .note {
+            background-color: #ffffffdb;
+            border: 1px solid #dbd3c5;
+            border-radius: 18px;
+            padding: 1.2rem 1.6rem;
+            font-size: 0.98rem;
+            color: #2f2b25;
+        }
+        .note strong {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>九游 · 服务概述</h1>
+        <div class="sub">围绕「九游」主题整理的基础能力说明，涵盖常见使用场景与配置参考。</div>
+    </div>
+
+    <!-- 优势区：卡片 -->
+    <section>
+        <h2 class="section-title">主要特点</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>模块化结构</h3>
+                <p>功能区域相对独立，可根据需要调整或扩展，减少耦合带来的维护成本。</p>
+            </div>
+            <div class="card">
+                <h3>配置说明清晰</h3>
+                <p>各项参数与使用方式均以文字形式整理，便于查阅与初次搭建。</p>
+            </div>
+            <div class="card">
+                <h3>常见场景覆盖</h3>
+                <p>从基础设置到日常管理，提供覆盖多数使用场景的参考指引。</p>
+            </div>
+            <div class="card">
+                <h3>持续内容补充</h3>
+                <p>说明页会根据实际反馈逐步完善，保持内容可读性与实用性。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区 + 引用块 -->
+    <section>
+        <h2 class="section-title">关于九游</h2>
+        <p>九游主要面向需要快速了解工具配置与功能逻辑的用户。网站内容围绕操作流程、模块说明以及常见注意事项展开，不包含夸张承诺或诱导性描述。页面信息均以客观整理为原则。</p>
+
+        <div class="insight-box">
+            <p><strong>说明：</strong> 如果你正在寻找一个结构清晰的参考页，<a href="https://panel-9you.com.cn">九游</a> 提供了按模块划分的文档式内容。建议从最关注的部分开始阅读，逐步了解整体逻辑。</p>
+            <p style="margin-bottom: 0;">所有功能描述均基于公开信息整理，不涉及内部数据或非授权材料。</p>
+        </div>
+
+        <p>在浏览过程中，你可能会遇到一些专用名词或配置项，页面中已尽量用普通语言解释。如有不明确的地方，可以结合具体章节反复对照。</p>
+    </section>
+
+    <!-- 场景提示卡片 -->
+    <section>
+        <h2 class="section-title">适用场景参考</h2>
+        <div class="note">
+            <p><strong>初次了解</strong> — 从 hero 区域开始，快速了解九游的定位与内容范畴。</p>
+            <p><strong>查阅配置细节</strong> — 优势区卡片列出了核心特点，可针对具体卡片深入对应章节。</p>
+            <p><strong>快速问答</strong> — 下方 FAQ 摘要覆盖了部分常见疑问，可减少重复查找的时间。</p>
+            <p style="margin-bottom: 0;"><strong>持续关注</strong> — 页面会不定期补充新内容，保持信息有效性。</p>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要  -->
+    <section>
+        <h2 class="section-title">常见疑问摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">九游包含哪些主要内容？</div>
+            <div class="faq-a">目前页面整理了基础功能说明、配置要点及使用场景参考。内容以文字描述为主，未使用复杂图表，方便直接阅读与复制。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">内容是否会经常变动？</div>
+            <div class="faq-a">会根据实际反馈和功能迭代适度更新，每次变更都会保留说明的连贯性。建议以 <a href="https://panel-9you.com.cn">九游</a> 页面实际展示为准。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">如何快速找到某个功能的说明？</div>
+            <div class="faq-a">可以使用页面内查找（Ctrl+F）定位关键词，或者从上方卡片区域判断所属模块。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">是否提供技术支持或人工咨询？</div>
+            <div class="faq-a">本页面为独立介绍页，不直接提供技术支持。具体问题可参考网站内的提示或联系相关渠道。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <span>了解更多：</span>
+        <a href="https://panel-9you.com.cn">九游</a>
+        <span class="sep">·</span>
+        <span style="color: #6a6258;">内容页面 · 信息参考</span>
+        <span class="sep">·</span>
+        <span>更新于 2025</span>
+    </div>
+
+</div>
+</body>
+</html>
