@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · 竞彩网首页官方知识库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f6fafc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1a2e3a;
+            line-height: 1.6;
+            padding: 1.5rem;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header / hero 精简 */
+        .hero {
+            background: linear-gradient(145deg, #e0f0f3 0%, #cfe5ea 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 18px rgba(0, 70, 80, 0.08);
+            border: 1px solid rgba(60, 160, 170, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #0b3b44;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #3d6b75;
+            background: rgba(255,255,255,0.5);
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin-top: 1rem;
+            font-size: 1.08rem;
+            color: #1f4b55;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #1f6f7c;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-top: 0.8rem;
+        }
+
+        /* 目录感说明区 + 网格卡片 */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0 1.8rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(30, 100, 110, 0.06);
+            border: 1px solid rgba(80, 175, 180, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(10, 80, 90, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #11555f;
+            border-left: 4px solid #3ba6b3;
+            padding-left: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul, .card p {
+            font-size: 0.95rem;
+            color: #2b4f59;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.3rem 0 0.3rem 1.4rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3ba6b3;
+            font-weight: bold;
+        }
+
+        .badge-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #58bec9;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        /* 提示区 温和风格 */
+        .notice-area {
+            background: #ebf5f7;
+            border-radius: 1.5rem;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.2rem;
+            border-left: 6px solid #3ba6b3;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .notice-icon {
+            font-size: 2rem;
+            line-height: 1;
+            color: #217a86;
+        }
+
+        .notice-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .notice-content p {
+            margin-bottom: 0.3rem;
+            font-size: 0.98rem;
+        }
+
+        .notice-content strong {
+            color: #11555f;
+        }
+
+        .notice-content a {
+            color: #0f6d7b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #3ba6b3;
+        }
+
+        .notice-content a:hover {
+            color: #04343d;
+            border-bottom-style: solid;
+        }
+
+        /* 相关信息区 */
+        .info-extra {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .info-block {
+            flex: 1 1 200px;
+            background: white;
+            padding: 1.3rem 1.5rem;
+            border-radius: 1.2rem;
+            border: 1px solid #d4e9ed;
+        }
+
+        .info-block h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1c5c67;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .info-block p {
+            font-size: 0.9rem;
+            color: #345f69;
+        }
+
+        .faq-mini {
+            background: #f0f7f9;
+            border-radius: 1.2rem;
+            padding: 1.5rem 1.8rem;
+            margin: 1rem 0 2rem;
+        }
+
+        .faq-mini details {
+            margin: 0.6rem 0;
+            border-bottom: 1px solid #cbe2e7;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #1a4e58;
+            cursor: pointer;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini summary::marker {
+            color: #3ba6b3;
+        }
+
+        .faq-mini p {
+            margin-top: 0.3rem;
+            font-size: 0.92rem;
+            color: #2c5d68;
+            padding-left: 0.5rem;
+        }
+
+        .footer-note {
+            border-top: 1px solid #cee2e6;
+            padding-top: 1.8rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #4b757f;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .footer-note a {
+            color: #0d6b79;
+            text-decoration: none;
+            border-bottom: 1px dotted #7fc1cc;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 1px solid #11555f;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0.8rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .directory-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .notice-area {
+                padding: 1.2rem;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .info-extra {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero 简洁目录感 -->
+    <header class="hero">
+        <h1>
+            📋 竞彩资料索引
+            <small>信息聚合 · 知识库</small>
+        </h1>
+        <p>从赛事数据到资讯脉络，围绕 <a href="https://chn-sportbet.com" style="color:#11555f;text-decoration:underline;text-underline-offset:3px;">竞彩网首页官方</a> 构建的轻量级信息目录，便于随时查阅与整理。</p>
+        <span class="tagline">📌 入口即索引 · 内容常新</span>
+    </header>
+
+    <!-- 网格卡片: 说明区 + 分类目录 -->
+    <div class="directory-grid">
+        <div class="card">
+            <h3>📖 赛事数据</h3>
+            <ul>
+                <li>联赛积分与赛程归档</li>
+                <li>历史交锋统计</li>
+                <li>实时赔率变动记录</li>
+                <li>球队近期状态折线</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🗂️ 规则与术语</h3>
+            <ul>
+                <li>让球 / 胜平负 说明</li>
+                <li>比分与总进球玩法</li>
+                <li>过关方式速查</li>
+                <li>奖金计算示例</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🧭 工具与导航</h3>
+            <ul>
+                <li>赛果快速检索</li>
+                <li>对阵日历</li>
+                <li>数据导出参考</li>
+                <li>桌面端 / 移动端适配</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>📚 资讯归档</h3>
+            <ul>
+                <li>赛前情报摘要</li>
+                <li>裁判与场馆信息</li>
+                <li>伤病与停赛列表</li>
+                <li>趋势观察笔记</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示区 温和嵌入链接 -->
+    <div class="notice-area">
+        <div class="notice-icon">📌</div>
+        <div class="notice-content">
+            <p><strong>提示 · 信息索引</strong> — 本站作为非官方资料整理页面，旨在提供更清晰的内容浏览路径。若需要查阅实时数据或完整的竞彩服务，可直接前往 <a href="https://chn-sportbet.com">竞彩网首页官方</a> 获取最新资讯。</p>
+            <p style="margin-top:0.4rem;opacity:0.9;">🔹 建议搭配官方源使用，信息更及时；本页仅作辅助索引。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区 (FAQ摘要 + 补充) -->
+    <div class="info-extra">
+        <div class="info-block">
+            <h4><span class="badge-dot"></span> 常见问题摘要</h4>
+            <p>如何理解让球数值？<br> 查看术语卡片中的基础规则与例子。</p>
+            <p style="margin-top:0.6rem;">数据更新频率？<br> 通常与 <a href="https://chn-sportbet.com" style="color:#0d6b79;text-decoration:underline;">竞彩网首页官方</a> 同步。</p>
+        </div>
+        <div class="info-block">
+            <h4><span class="badge-dot"></span> 适用场景</h4>
+            <p>赛前资料收集、赛后复盘整理、数据趋势对比、规则快速查阅。适合对信息结构有要求的爱好者。</p>
+        </div>
+        <div class="info-block">
+            <h4><span class="badge-dot"></span> 内容说明</h4>
+            <p>所有条目均为归纳性质，不包含具体推荐或结果预测。请结合自身判断使用。</p>
+        </div>
+    </div>
+
+    <!-- 更细致的 FAQ 折叠区 -->
+    <div class="faq-mini">
+        <details>
+            <summary>“竞彩网首页官方” 与其他信息源有什么不同？</summary>
+            <p>该入口提供核心的赛事数据与官方发布内容，本页面将其作为索引的锚点，方便用户快速定位到权威信息流。建议将 <a href="https://chn-sportbet.com" style="color:#0d6b7a;text-decoration:underline;font-weight:500;">竞彩网首页官方</a> 加入书签，作为日常查阅的第一站。</p>
+        </details>
+        <details>
+            <summary>资料卡片中的内容会更新吗？</summary>
+            <p>知识库结构会定期优化，条目根据赛季与规则变化调整。本页不直接展示实时赔率，但会保留指向官方页面的路径。</p>
+        </details>
+        <details>
+            <summary>移动端浏览体验如何？</summary>
+            <p>卡片及导航已针对手机屏幕做自适应，所有链接均可正常访问。官方页面同样具备移动端适配。</p>
+        </details>
+    </div>
+
+    <!-- footer / 页脚轻量信息 -->
+    <div class="footer-note">
+        <span>📂 索引版本 · 2025</span>
+        <span>资料整理 · 以 <a href="https://chn-sportbet.com">竞彩网首页官方</a> 为参考</span>
+        <span style="opacity:0.6;">非官方 · 仅信息聚合</span>
+    </div>
+
+</div>
+</body>
+</html>
